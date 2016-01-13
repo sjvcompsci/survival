@@ -11,6 +11,7 @@ namespace SpriteMapStuff
     {
         static void Main(string[] args)
         {
+            //hello
             var game = new Game("Spritemap Animation", 400, 200);
             game.SetWindowScale(3);
             game.Color = new Color(0.3f, 0.5f, 0.7f);
