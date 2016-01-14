@@ -38,7 +38,7 @@ namespace SpriteMapStuff
             spritemap.Add(Animation.WalkRight, "9", 1);
             spritemap.Add(Animation.WalkDown, "0", 1);
             spritemap.Add(Animation.WalkLeft, "5", 1);
-            spritemap.Add(Animation.Attack, "17, 0", 5).NoRepeat();
+            spritemap.Add(Animation.Attack, "17, 0", 15).NoRepeat();
             spritemap.CenterOrigin();
             spritemap.Play(Animation.WalkDown);
             AddGraphic(spritemap);
@@ -82,7 +82,7 @@ namespace SpriteMapStuff
                 spritemap.Play(Animation.WalkRight);
                 X += MoveSpeed;
             }
-            if (Input.KeyDown(Key.Space))
+            if (Input.KeyPressed(Key.Space))
             {
                 spritemap.Play(Animation.Attack);
 
