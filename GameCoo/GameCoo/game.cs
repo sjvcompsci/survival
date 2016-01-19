@@ -31,6 +31,7 @@ namespace SpriteMapStuff
             WalkRight,
             Attack
         }
+        Spritemap<Animation> spritemap2 = new Spritemap<Animation>("Attacker1.png", 24, 40);
         Spritemap<Animation> spritemap = new Spritemap<Animation>("character.png", 40, 38);
         public AnimatingEntity(float x, float y) : base(x, y)
         {
