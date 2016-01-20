@@ -16,8 +16,79 @@ namespace SpriteMapStuff
             game.SetWindowScale(3);
             game.Color = new Color(0.3f, 0.5f, 0.7f);
             var scene = new Scene();
+            scene.Add(new AnimatingEntity2(game.HalfWidth, game.HalfHeight));
             scene.Add(new AnimatingEntity(game.HalfWidth, game.HalfHeight));
             game.Start(scene);
+        }
+    }
+    class AnimatingEntity2: Entity
+    {
+        public float MoveSpeed = 3;
+        enum Animation
+        {
+            WalkUp,
+            WalkDown,
+            WalkLeft,
+            WalkRight,
+            Attack
+        }
+        Spritemap<Animation> spritemap2 = new Spritemap<Animation>("Attacker1.png", 24, 40);
+        public AnimatingEntity2(float x, float y) : base(x, y)
+        {
+            spritemap2.Add(Animation.WalkUp, "4", 1);
+            spritemap2.Add(Animation.WalkDown, "1", 1);
+            spritemap2.Add(Animation.WalkRight, "10", 1);
+            spritemap2.Add(Animation.WalkLeft, "7", 1);
+            spritemap2.Add(Animation.Attack, "28, 1", 15).NoRepeat();
+            spritemap2.CenterOrigin();
+            spritemap2.Play(Animation.WalkDown);
+            AddGraphic(spritemap2);
+        }
+        public override void Update()
+        {
+            if (X <= 20)
+            {
+                X = 20;
+            }
+            if (X >= Game.Width)
+            {
+                X = Game.Width;
+            }
+            if (Y >= Game.Height)
+            {
+                Y = Game.Height;
+            }
+            if (Y <= 0)
+            {
+                Y = 0;
+            }
+            base.Update();
+            if (Input.KeyDown(Key.Up))
+            {
+                spritemap2.Play(Animation.WalkUp);
+                Y -= MoveSpeed;
+            }
+            if (Input.KeyDown(Key.Down))
+            {
+                spritemap2.Play(Animation.WalkDown);
+                Y += MoveSpeed;
+            }
+            if (Input.KeyDown(Key.Left))
+            {
+                spritemap2.Play(Animation.WalkLeft);
+                X -= MoveSpeed;
+            }
+            if (Input.KeyDown(Key.Right))
+            {
+                spritemap2.Play(Animation.WalkRight);
+                X += MoveSpeed;
+            }
+            if (Input.KeyPressed(Key.PageUp))
+            {
+                spritemap2.Play(Animation.Attack);
+
+            }
+
         }
     }
     class AnimatingEntity : Entity
@@ -31,7 +102,7 @@ namespace SpriteMapStuff
             WalkRight,
             Attack
         }
-        Spritemap<Animation> spritemap2 = new Spritemap<Animation>("Attacker1.png", 24, 40);
+       
         Spritemap<Animation> spritemap = new Spritemap<Animation>("character.png", 40, 38);
         public AnimatingEntity(float x, float y) : base(x, y)
         {

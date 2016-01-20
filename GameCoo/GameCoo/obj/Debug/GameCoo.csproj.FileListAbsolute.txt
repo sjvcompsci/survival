@@ -61,3 +61,4 @@ C:\Users\sjv2016112\Dropbox\github\survival\GameCoo\GameCoo\bin\Debug\sfmlnet-au
 C:\Users\sjv2016112\Dropbox\github\survival\GameCoo\GameCoo\obj\Debug\GameCoo.csprojResolveAssemblyReference.cache
 C:\Users\sjv2016112\Dropbox\github\survival\GameCoo\GameCoo\obj\Debug\GameCoo.exe
 C:\Users\sjv2016112\Dropbox\github\survival\GameCoo\GameCoo\obj\Debug\GameCoo.pdb
+C:\Users\sjv2016112\Dropbox\github\survival\GameCoo\GameCoo\bin\Debug\Attacker1.png

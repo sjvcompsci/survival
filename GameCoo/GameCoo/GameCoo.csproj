@@ -57,7 +57,9 @@
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Attacker1.png" />
+    <Content Include="Attacker1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\Debug\GameCoo.vshost.exe" />
     <Content Include="character.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
