@@ -15,7 +15,7 @@ namespace GameCoo
         public float MoveSpeed = 3;
 
         Spritemap<Animation> spritemap = new Spritemap<Animation>("character.png", 40, 38);
-
+        BoxCollider c = new BoxCollider(40, 38, Tag.P1);
         public Player1(float x, float y) : base(x, y)
         {
             spritemap.Add(Animation.WalkUp, "13", 1);
@@ -26,6 +26,8 @@ namespace GameCoo
             spritemap.CenterOrigin();
             spritemap.Play(Animation.WalkDown);
             AddGraphic(spritemap);
+            AddCollider(c);
+            c.CenterOrigin();
         }
         public override void Update()
         {
@@ -70,11 +72,10 @@ namespace GameCoo
             {
                 spritemap.Play(Animation.Attack);
             }
-            if (Input.KeyDown(Key.Space) && )
+            if (Input.KeyDown(Key.Space) && c.Overlap(X, Y, Tag.P2))
             {
-
+                p2.health -= 1;
             }
-            
         }
     }
 }

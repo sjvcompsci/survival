@@ -17,4 +17,9 @@ namespace GameCoo
         WalkRight,
         Attack
     }
+    enum Tag
+    {
+        P1,
+        P2
+    }
 }
