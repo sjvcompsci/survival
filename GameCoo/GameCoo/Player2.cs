@@ -30,9 +30,9 @@ namespace GameCoo
         }
         public override void Update()
         {
-            if (X <= 20)
+            if (X <= 15)
             {
-                X = 20;
+                X = 15;
             }
             if (X >= Game.Width)
             {
