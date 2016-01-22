@@ -13,7 +13,7 @@ namespace GameCoo
         {
             //hello
 
-            var game = new Game("Waifu", 640,640,60);
+            var game = new Game("Duel", 640,640,60);
             
             game.Color = new Color(0.3f, 0.5f, 0.7f);
 

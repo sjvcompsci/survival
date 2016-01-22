@@ -103,9 +103,10 @@ namespace GameCoo
             if (Input.KeyDown(Key.Space) && c.Overlap(X, Y, Tag.P2))
             {
                 attack = true;
-                attack = false;
+                
             }
             
         }
+      
     }
 }

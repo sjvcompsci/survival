@@ -100,17 +100,10 @@ namespace GameCoo
            if (Input.KeyDown(Key.PageUp) && c.Overlap(X, Y, Tag.P1))
             {
                 attack = true;
-                    attack = false;
+                    
             }
            
         }
-        public override void Render()
-        {
-            base.Render();
-            c.Render();
-
-
-
-        }
+        
     }
 }
