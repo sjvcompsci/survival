@@ -10,11 +10,35 @@ namespace GameCoo
     class Player2 : Entity
     {
         public Player1 p1;
-        public int health = 100;
+        int health = 100;
         public float MoveSpeed = 3;
+        bool attack = false;
 
         BoxCollider c = new BoxCollider(24, 40, Tag.P2);
         Spritemap<Animation> spritemap2 = new Spritemap<Animation>("Attacker1.png", 24, 40);
+
+        public bool isattack
+        {
+            get { return attack; }
+        }
+
+        public int gethealth
+        {
+            get { return health; }
+            set { health = value; }
+        }
+        public float getX
+        {
+            get { return X; }
+        }
+        public float getY
+        {
+            get { return Y; }
+        }
+
+
+
+
         public Player2(float x, float y) : base(x, y)
         {
             spritemap2.Add(Animation.WalkUp, "4", 1);
@@ -75,11 +99,17 @@ namespace GameCoo
             }
            if (Input.KeyDown(Key.PageUp) && c.Overlap(X, Y, Tag.P1))
             {
-                p1.health -= 1;
+                attack = true;
+                    attack = false;
             }
            
+        }
+        public override void Render()
+        {
+            base.Render();
+            c.Render();
 
-          
+
 
         }
     }
